@@ -16,7 +16,7 @@ defmodule PluralsightTweet do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: PluralsightTweet.Supervisor]
     process = Supervisor.start_link(children, opts)
-    PluralsightTweet.Scheduler.schedule_file("* * * * *",
+    PluralsightTweet.Scheduler.schedule_file("0 9 * * *",
     Path.join("#{:code.priv_dir(:pluralsight_tweet)}",
     "sample.txt"))
 
